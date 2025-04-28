@@ -6,3 +6,5 @@ Cara Mengupload code ke github :
      Gunakan perintah git add . untuk menambahkan semua file di folder proyek ke staging area.
  3.  Komit Perubahan:
      Jalankan git commit -m "first commit" untuk membuat komit pertama dengan pesan yang deskriptif.
+
+     saya aji
