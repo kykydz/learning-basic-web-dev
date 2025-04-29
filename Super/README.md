@@ -4,3 +4,5 @@ Masuk ke Folder Project
 Buat dan Pindah ke Branch Baru
 mengedit file
 commit dan push ke branch
+mengedit file
+commit dan push ke branch
