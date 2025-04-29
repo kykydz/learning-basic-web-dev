@@ -1,52 +1,10 @@
-Cara 1: Upload via Website GitHub (Manual Upload)
-Cocok untuk file kecil atau hanya satu dua file.
-
-Buka https://github.com dan login.
-
-Buat repositori baru dengan klik tombol “New” di halaman repo.
-
-Beri nama repositori dan klik "Create repository".
-
-Setelah repo dibuat, klik tombol “Add file” → “Upload files”.
-
-Klik “Choose your files” dan pilih file dari komputer kamu.
-
-Tambahkan pesan commit (misalnya: Initial upload).
-
-Klik tombol “Commit changes”.
-
-🔹 Cara 2: Upload via Git (Git Bash / Terminal)
-Cocok untuk project lengkap dari komputer lokal.
-
-📌 Persyaratan Awal:
-Sudah install Git
-
-Sudah punya akun GitHub dan membuat repo kosong
-
-✅ Langkah-langkah:
-bash
-Salin
-Edit
-# 1. Buka terminal / Git Bash
-cd path/ke/folder/projekmu
-
-# 2. Inisialisasi git di folder
+cara upload file ke github
+1. buat repository baru dulu
+2. setelah membuat repo baru akan muncul cara untuk upload file berikut adalah langkah nya : 
+echo "# coba" >> README.md
 git init
-
-# 3. Tambah semua file ke staging
-git add .
-
-# 4. Commit perubahan
-git commit -m "Initial commit"
-
-# 5. Hubungkan ke repo GitHub (ganti URL dengan repo milikmu)
-git remote add origin https://github.com/username/nama-repo.git
-
-# 6. Upload ke GitHub
-git push -u origin master
-Jika repo kamu pakai branch main (bukan master), gunakan:
-
-bash
-Salin
-Edit
+git add README.md "kalau sudah ada file yang mau di upload tidak perlu echo langsung aja git init dan setelah itu git add ."
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bublebible/coba.git
 git push -u origin main
