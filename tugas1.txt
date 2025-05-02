@@ -1,0 +1,10 @@
+cara upload file ke github
+1. buat repository baru dulu
+2. setelah membuat repo baru akan muncul cara untuk upload file berikut adalah langkah nya : 
+echo "# coba" >> README.md
+git init
+git add README.md "kalau sudah ada file yang mau di upload tidak perlu echo langsung aja git init dan setelah itu git add ."
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bublebible/coba.git
+git push -u origin main
