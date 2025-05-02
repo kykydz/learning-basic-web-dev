@@ -11,5 +11,6 @@ Berikut adalah langkah-langkah untuk membuat branch baru di Git:
     Untuk membuat branch baru dan langsung berpindah ke branch tersebut, 
     gunakan perintah berikut:
     git checkout -b nama-branch-baru
+    
 3.Menghubungkan komputer dengan github (remote) dengan cara merge
     setelah melakukan pengeditan kode lalu melakukan push dengan cara commit dan publish.
