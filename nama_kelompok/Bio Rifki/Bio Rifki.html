@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Biodata Rifki</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .biodata-box {
+    background: white;
+    max-width: 350px;
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .photo {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #3949ab;
+    overflow: hidden;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .info {
+    flex: 1;
+    min-width: 200px;
+  }
+  h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  dl {
+    margin: 0;
+  }
+  dt {
+    font-weight: bold;
+    margin-top: 12px;
+    color: #3949ab;
+  }
+  dd {
+    margin-left: 0;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  @media (max-width: 400px) {
+    .biodata-box {
+      padding: 15px 20px;
+      max-width: 320px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .info {
+      min-width: unset;
+      width: 100%;
+    }
+    h1 {
+      margin-bottom: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="biodata-box" role="region" aria-label="Biodata Sederhana">
+    <h1>Biodata</h1>
+    <div class="photo" aria-label="Foto Profil">
+      <img src="C:\Users\hp\OneDrive\Documents\Alpro\praktikum_pti\tugas akhir pti\Rizal.jpg" alt="Foto Profil" />
+    </div>
+    <div class="info">
+      <dl>
+        <dt>Nama</dt>
+        <dd>Naufal Rifki Ramadhan</dd>
+
+        <dt>Umur</dt>
+        <dd>20 tahun</dd>
+
+        <dt>Jenis Kelamin</dt>
+        <dd>Laki-Laki</dd>
+
+        <dt>Alamat</dt>
+        <dd>Bayat KLaten Indonesia</dd>
+
+        <dt>Pendidikan</dt>
+        <dt>Pendidikan</dt>
+        <dd>SDIT Persada  (2011 - 2017)</dd>
+        <dd>SMP Negeri 01 Bayat (2017 - 2020)</dd>
+        <dd>SMA Negeri 01 (2020 - 2023)</dd>
+
+        <dt>Kontak</dt>
+        <dd>Email: revv1311@gmail.com</dd>
+        <dd>Telepon: +62 813 1234 5678</dd>
+      </dl>
+    </div>
+  </div>
+</body>
+</html>
