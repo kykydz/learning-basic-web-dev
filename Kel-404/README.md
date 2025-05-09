@@ -4,7 +4,7 @@ cd nama-folder-proyek
 
 git init (jika belum di-init)
 
-git add .
+git add
 
 git commit -m "Pesan commit"
 
