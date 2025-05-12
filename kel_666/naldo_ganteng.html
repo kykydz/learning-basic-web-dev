@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>KTP ID Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .ktp-card {
+            width: 500px;
+            padding: 20px;
+            background-color: #e6f0ff;
+            border: 2px solid #000080;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .ktp-header {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000080;
+            margin-bottom: 10px;
+        }
+
+        .ktp-photo {
+            float: right;
+            width: 120px;
+            height: 150px;
+            margin-left: 10px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .ktp-info {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .ktp-info span {
+            display: inline-block;
+            width: 140px;
+            font-weight: bold;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ktp-card">
+    <div class="ktp-header">YOGYAKARTA</div>
+    <img src="naldo.jpg" alt="Foto KTP" class="ktp-photo">
+
+    <div class="ktp-info">
+        
+        <p><span>Nama</span>: TIQRISMAN REINALDO TOSAE</p>
+        <p><span>NIM</span>: 231054023</p>
+        <p><span>Tempat/Tgl Lahir</span>: KOROLAMA, 11 Januari 2004</p>
+        <p><span>Jenis Kelamin</span>: Laki-laki</p>
+        <p><span>Alamat</span>: Yogyakarta</p>
+    </div>
+    <div class="clear"></div>
+</div>
+
+</body>
+</html>
