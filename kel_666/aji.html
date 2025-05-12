@@ -1,14 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biodata Diri - AJI NUGROHO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Hello WOlrrd</h1>
+<body class="bg-gradient-to-tr from-sky-100 via-white to-purple-100 min-h-screen flex items-center justify-center font-sans">
+
+  <div class="bg-white shadow-2xl rounded-3xl p-8 max-w-md w-full text-center relative">
+
+    <!-- Foto -->
+    <div class="mb-4 relative w-40 h-40 mx-auto">
+      <img id="fotoDiri" src="aji.jpg"
+        class="w-full h-full rounded-full object-cover border-4 border-purple-300 shadow-md transition duration-300" />
+    </div>
+
+    <!-- Nama & Info Utama -->
+    <h1 class="text-2xl font-bold text-gray-800">AJI NUGROHO</h1>
+    <p class="text-sm text-gray-500 mb-4">JAMBI KECIL, 28 JANUARI 2003</p>
+
+    <!-- Biodata -->
+    <div class="space-y-2 text-sm text-left text-gray-700 px-4 text-font-color">
+      <p><strong>Jenis Kelamin:</strong> Laki-laki</p>
+      <p><strong>Alamat:</strong> JAMBI KECIL RT.02 KEC.MARO SEBO KAB.MUARO JAMBI </p>
+      <p><strong>Email:</strong> ajin3061@email.com</p>
+      <p><strong>Telepon:</strong> 0812-2989-1355</p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <div class="mt-6 flex flex-col items-center gap-2">
+      <div class="flex justify-center gap-4 flex-wrap">
+        <button id="changeColorBtn"
+          class="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded-xl text-sm transition">
+          Ganti Warna Font
+        </button>
+        <button id="changeImageBtn"
+          class="bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded-xl text-sm transition">
+          Ganti Foto
+        </button>
+        <button id="uploadImageBtn"
+          class="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-xl text-sm transition">
+          Upload Foto
+        </button>
+      </div>
+      <input type="file" id="uploadImageInput" accept="image/*" class="hidden">
+    </div>
+
+    <!-- Input Nama -->
+    <div class="mt-6">
+      <input type="text" id="inputNama" placeholder="Masukkan Nama Anda"
+        class="border border-gray-300 rounded-xl px-4 py-2 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition" />
+      <button id="kirimNamaBtn"
+        class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-xl text-sm w-full transition">
+        Kirim Nama
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    // Warna teks bergantian
+    const changeColorBtn = document.getElementById('changeColorBtn');
+    const textElements = document.querySelectorAll('.text-font-color');
+    const colors = ['#d97706', '#0ea5e9', '#8b5cf6', '#16a34a', '#dc2626'];
+    let colorIndex = 0;
+
+    changeColorBtn.addEventListener('click', () => {
+      textElements.forEach(el => {
+        el.style.color = colors[colorIndex];
+      });
+      colorIndex = (colorIndex + 1) % colors.length;
+    });
+
+    // Ganti foto
+    const changeImageBtn = document.getElementById('changeImageBtn');
+    const fotoDiri = document.getElementById('fotoDiri');
+    const imageSources = ['aji.jpg', 'aji2.jpg', 'aji3.jpg'];
+    let imageIndex = 0;
+
+    changeImageBtn.addEventListener('click', () => {
+      imageIndex = (imageIndex + 1) % imageSources.length;
+      fotoDiri.src = imageSources[imageIndex];
+    });
+
+    // Upload gambar dari file input
+    const uploadImageBtn = document.getElementById('uploadImageBtn');
+    const uploadImageInput = document.getElementById('uploadImageInput');
+
+    uploadImageBtn.addEventListener('click', () => {
+      uploadImageInput.click();
+    });
+
+    uploadImageInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          fotoDiri.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Kirim nama dan tampilkan alert
+    const inputNama = document.getElementById('inputNama');
+    const kirimNamaBtn = document.getElementById('kirimNamaBtn');
+
+    function kirimNama() {
+      const nama = inputNama.value.trim();
+      if (nama) {
+        alert(`Halloo: ${nama}`);
+      } else {
+        alert('Silakan masukkan nama terlebih dahulu.');
+      }
+    }
+
+    kirimNamaBtn.addEventListener('click', kirimNama);
+
+    // Juga jalankan saat tekan Enter
+    inputNama.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        kirimNama();
+      }
+    });
+  </script>
+
 </body>
 
 </html>
