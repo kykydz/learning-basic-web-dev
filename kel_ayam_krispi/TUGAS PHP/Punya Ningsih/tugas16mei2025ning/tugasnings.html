@@ -1,0 +1,67 @@
+<?php
+// Konfigurasi koneksi database
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "latihan_db";
+
+// Buat koneksi
+$conn = new mysqli($host, $user, $password, $dbname);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Ambil data dari tabel mahasiswa
+$sql = "SELECT id, nama, nim FROM mahasiswa";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Mahasiswa</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Daftar Mahasiswa</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>NIM</th>
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            // Tampilkan data per baris
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>".$row["id"]."</td>
+                        <td>".$row["nama"]."</td>
+                        <td>".$row["nim"]."</td>
+                      </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='3'>Tidak ada data</td></tr>";
+        }
+        $conn->close();
+        ?>
+    </table>
+</body>
+</html>
