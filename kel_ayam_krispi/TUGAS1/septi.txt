@@ -1,0 +1,31 @@
+1. Buat repository baru di GitHub (via web)
+Login ke https://github.com
+
+Klik New repository
+
+Isi nama repository (misal: demo-dom)
+
+Pilih Public/Private sesuai kebutuhan
+
+Jangan centang “Initialize with README”
+
+Klik Create repository
+
+2. Jalankan perintah ini di terminal (Command Prompt / PowerShell)
+Ganti bagian C:\Path\To\Project dengan folder project kamu, dan https://github.com/username/repo.git dengan URL repo yang sudah kamu buat.
+
+
+cd "C:\Users\Lenovo\Documents\PRAKTIKUM SEP"      # pindah ke folder project
+git init                                           # inisialisasi git jika belum
+git add .                                          # tambahkan semua file ke staging
+git commit -m "Initial commit"                     # commit dengan pesan
+git remote add origin https://github.com/username/repo.git  # tambahkan remote
+git push -u origin main                            # push ke branch main di GitHub
+Catatan Penting:
+Jika git push gagal karena branch default bukan main, coba ganti main dengan master:
+
+
+git push -u origin master
+Jika diminta username & password, masukkan username GitHub dan personal access token (PAT) sebagai password.
+
+Kalau belum ada Git di komputer, install dulu dari https://git-scm.com/downloads.
