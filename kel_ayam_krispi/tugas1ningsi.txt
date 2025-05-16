@@ -1,0 +1,20 @@
+# Masuk ke folder proyek kamu
+cd path/ke/folder/project-ku
+
+# Inisialisasi git
+git init
+
+# Tambahkan remote (ganti USERNAME dan NAMA_REPO)
+git remote add origin https://github.com/USERNAME/NAMA_REPO.git
+
+# Tambahkan semua file
+git add .
+
+# Commit dengan pesan
+git commit -m "Upload awal"
+
+# Ganti nama branch ke main (hanya jika belum ada branch)
+git branch -M main
+
+# Push ke GitHub
+git push -u origin main
