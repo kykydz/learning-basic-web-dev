@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo DOM</title>
+</head>
+<body>
+  <h1>Demo DOM p web</h1>
+
+  <p>ini paragraf diisi dengan kemauan kalian yaaa</p>
+
+  <ul>
+    <li>saya kuliah di akprind</li>
+    <li>jurusan informatika</li>
+    <li>semeste 4</li>
+    <li>suka warna pink</li>
+  </ul>
+
+  <button id="intro">intro</button>
+
+  <form id="form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="phone">No HP:</label>
+    <input type="text" id="phone" name="phone"><br><br>
+
+    <label for="address">Alamat:</label>
+    <input type="text" id="address" name="address"><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+
+      if (!name || !email || !phone || !address) {
+        alert("Semua data harus diisi!");
+        return;
+      }
+
+      // Tampilkan alert dan ubah background
+      alert("Hello " + name);
+      document.body.style.backgroundColor = "pink";
+    });
+
+    document.getElementById("intro").addEventListener("click", function() {
+      alert("Ini adalah demo DOM");
+    });
+  </script>
+</body>
+</html>
