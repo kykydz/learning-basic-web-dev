@@ -77,57 +77,5 @@
         <tr><td class="label text-font-color">Email</td><td class="text-font-color">: m.dheo008@gmail.com</td></tr>
     </table>
 </div>
-
-<!-- Tombol ubah warna -->
-<div class="biodata-container" style="text-align: center;">
-    <button type="button" id="changeColorBtn">Ubah Warna Teks</button>
-</div>
-
-<!-- Tempat Form akan dimunculkan -->
-<div id="formContainer"></div>
-
-<script>
-    // Ganti warna teks
-    const changeColorBtn = document.getElementById('changeColorBtn');
-    const textElements = document.querySelectorAll('.text-font-color');
-    const colors = ['red', 'green', 'blue', 'purple', 'indigo'];
-    let colorIndex = 0;
-
-    changeColorBtn.addEventListener('click', () => {
-        textElements.forEach(element => {
-            element.style.color = colors[colorIndex];
-        });
-        colorIndex = (colorIndex + 1) % colors.length;
-    });
-
-    // Buat form menggunakan JavaScript
-    const form = document.createElement('form');
-
-    const inputNama = document.createElement('input');
-    inputNama.type = 'text';
-    inputNama.name = 'nama';
-    inputNama.placeholder = 'Nama Anda';
-
-    const inputEmail = document.createElement('input');
-    inputEmail.type = 'email';
-    inputEmail.name = 'email';
-    inputEmail.placeholder = 'Email Anda';
-
-    const submitBtn = document.createElement('button');
-    submitBtn.type = 'submit';
-    submitBtn.textContent = 'Kirim';
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert(`Nama: ${inputNama.value}\nEmail: ${inputEmail.value}`);
-    });
-
-    form.appendChild(inputNama);
-    form.appendChild(inputEmail);
-    form.appendChild(submitBtn);
-
-    document.getElementById('formContainer').appendChild(form);
-</script>
-
 </body>
 </html>
