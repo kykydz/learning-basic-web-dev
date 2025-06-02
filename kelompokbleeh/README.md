@@ -1,6 +1,6 @@
 1. Siapkan Akun dan Repositori GitHub
 Login ke GitHub: https://github.com
-
+\
 Buat Repository Baru:
 
 Klik tombol New atau + → New repository.
