@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Java DOM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-sans bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+
+  <div class="bg-white/30 backdrop-blur-md shadow-2xl rounded-2xl p-10 w-96 flex flex-col items-center space-y-6 animate-fade-in">
+    <h2 class="text-2xl font-bold text-gray-800">Masukkan Nama Anda</h2>
+
+    <input type="text" id="name" placeholder="Nama Anda"
+           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400 transition duration-300">
+
+    <button id="greetBtn" 
+            class="w-full px-4 py-2 bg-green-500 text-white font-semibold rounded-md transition duration-300 hover:bg-green-600">
+      Sapa
+    </button>
+
+    <button id="colorBtn" 
+            class="w-full px-4 py-2 bg-gray-400 text-white rounded-md transition duration-300 hover:bg-gray-500">
+      Klik Aku
+    </button>
+
+    <p id="greeting" class="text-lg font-medium text-gray-700 mt-4"></p>
+  </div>
+
+  <script>
+    const greetBtn = document.getElementById('greetBtn');
+    const colorBtn = document.getElementById('colorBtn');
+    const input = document.getElementById('name');
+    const greeting = document.getElementById('greeting');
+
+    greetBtn.addEventListener('click', () => {
+      const name = input.value.trim();
+      if (name) {
+        const message = `Halo, ${name} Senang bertemu denganmu`;
+        greeting.textContent = message;
+
+        greetBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+        greetBtn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+
+        greeting.style.opacity = 0;
+        setTimeout(() => {
+          greeting.style.opacity = 1;
+          greeting.style.transition = 'opacity 0.6s ease-in-out';
+        }, 100);
+
+        alert(message);
+
+        window.location.href = '../biodata/biodata_ridok.html';
+      } else {
+        const warning = 'Silakan masukkan nama';
+        greeting.textContent = warning;
+        greeting.style.color = 'red';
+        alert(warning);
+      }
+    });
+
+    colorBtn.addEventListener('click', () => {
+      colorBtn.classList.remove('bg-gray-400', 'hover:bg-gray-500');
+      colorBtn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+      colorBtn.textContent = 'Warna Sudah Diubah';
+    });
+  </script>
+
+</body>
+</html>
