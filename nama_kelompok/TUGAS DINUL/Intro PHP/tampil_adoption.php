@@ -1,16 +1,5 @@
 <?php
-// Koneksi ke database
-$host = "localhost";
-$user = "root";
-$password = ""; // kosong jika default Laragon
-$database = "cat adoption";
-
-$conn = new mysqli($host, $user, $password, $database);
-
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+include 'koneksi.php'; // Hubungkan ke file koneksi
 
 // Ambil data dari tabel adoption
 $sql = "SELECT * FROM adoption";
@@ -25,6 +14,7 @@ echo "<tr>
         <th>Jenis Hewan</th>
         <th>Tanggal</th>
         <th>Notes</th>
+        <th>Aksi</th> <!-- Tambahan kolom aksi -->
       </tr>";
 
 if ($result->num_rows > 0) {
@@ -35,14 +25,20 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["jenis_hewan"] . "</td>";
         echo "<td>" . $row["tanggal"] . "</td>";
         echo "<td>" . $row["notes"] . "</td>";
+        echo "<td>
+        <a href='edit_adoption.php?id=" . $row["id_adop"] . "' class='mr-2'>✏ Edit</a>
+        <a href='hapus_adoption.php?id=" . $row["id_adop"] . "' 
+           onclick=\"return confirm('Yakin ingin menghapus data ini?')\">🗑 Hapus</a>
+        </td>";
+
         echo "</tr>";
     }
 } else {
-    echo "<tr><td colspan='5'>Tidak ada data adopsi.</td></tr>";
+    echo "<tr><td colspan='6'>Tidak ada data adopsi.</td></tr>";
 }
 echo "</table>";
 
-// Tambahkan tombol kembali
+// Tombol kembali
 echo "<br><a href='index.html' style='
     display: inline-block;
     margin-top: 20px;
