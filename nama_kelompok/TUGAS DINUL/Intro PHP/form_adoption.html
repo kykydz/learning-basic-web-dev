@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Adopsi Hewan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center text-green-700">Form Adopsi Hewan</h2>
+        <form action="simpan_adoption.php" method="POST" class="space-y-4">
+            <div>
+                <label for="nama_adopter" class="block text-gray-700 font-medium">Nama Adopter:</label>
+                <input type="text" id="nama_adopter" name="nama_adopter" required
+                    class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+
+            <div>
+                <label for="jenis_hewan" class="block text-gray-700 font-medium">Jenis Hewan:</label>
+                <input type="text" id="jenis_hewan" name="jenis_hewan" required
+                    class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+
+            <div>
+                <label for="tanggal" class="block text-gray-700 font-medium">Tanggal Adopsi:</label>
+                <input type="date" id="tanggal" name="tanggal" required
+                    class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+
+            <div>
+                <label for="notes" class="block text-gray-700 font-medium">Catatan (opsional):</label>
+                <textarea id="notes" name="notes" rows="3"
+                    class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
+            </div>
+
+            <div class="text-center">
+                <input type="submit" value="Simpan Data"
+                    class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition duration-200">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
