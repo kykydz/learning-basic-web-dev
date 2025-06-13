@@ -50,10 +50,34 @@
             Universitas AKPRIND Indonesia (2023–Sekarang)
           </span>
         </div>
+        <div class="text-center md:text-left">
+          <button id="changeColorBtn"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Ubah Warna Tema
+          </button>
+        </div>
+      </div>
       </div>
     </div>
 
   </div>
+  <script>
+  const btn = document.getElementById('changeColorBtn');
+  const body = document.body;
+
+  let toggled = false;
+
+  btn.addEventListener('click', () => {
+    toggled = !toggled;
+
+    if (toggled) {
+      // Ubah warna background dan teks
+      body.className = "bg-gradient-to-br from-yellow-100 via-pink-100 to-red-100 min-h-screen flex items-center justify-center p-6 text-gray-800";
+    } else {
+      // Kembalikan ke warna awal
+      body.className = "bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 min-h-screen flex items-center justify-center p-6";
+    }
+  });
+</script>
 
 </body>
 
