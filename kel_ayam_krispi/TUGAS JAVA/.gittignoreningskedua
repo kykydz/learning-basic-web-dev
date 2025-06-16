@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [form, setForm] = useState({
+    nama: '',
+    nim: '',
+    email: '',
+    gender: '',
+    jurusan: '',
+    alamat: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Data Diterima:\nNama: ${form.nama}\nNIM: ${form.nim}\nEmail: ${form.email}\nJenis Kelamin: ${form.gender}\nJurusan: ${form.jurusan}\nAlamat: ${form.alamat}`);
+    setForm({
+      nama: '',
+      nim: '',
+      email: '',
+      gender: '',
+      jurusan: '',
+      alamat: ''
+    });
+  };
+
+  return (
+    <div style={{
+      padding: '30px',
+      fontFamily: 'Arial',
+      maxWidth: '500px',
+      margin: 'auto'
+    }}>
+      <h2>Form Pendaftaran Mahasiswa</h2>
+      <form onSubmit={handleSubmit}>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Nama Lengkap:</label><br />
+          <input type="text" name="nama" value={form.nama} onChange={handleChange} required style={inputStyle} />
+        </div>
+        <div style={{ marginBottom: '10px' }}>
+          <label>NIM:</label><br />
+          <input type="text" name="nim" value={form.nim} onChange={handleChange} required style={inputStyle} />
+        </div>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Email:</label><br />
+          <input type="email" name="email" value={form.email} onChange={handleChange} required style={inputStyle} />
+        </div>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Jenis Kelamin:</label><br />
+          <label><input type="radio" name="gender" value="Laki-laki" checked={form.gender === 'Laki-laki'} onChange={handleChange} /> Laki-laki</label><br />
+          <label><input type="radio" name="gender" value="Perempuan" checked={form.gender === 'Perempuan'} onChange={handleChange} /> Perempuan</label>
+        </div>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Jurusan:</label><br />
+          <select name="jurusan" value={form.jurusan} onChange={handleChange} required style={inputStyle}>
+            <option value="">-- Pilih Jurusan --</option>
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+            <option value="Teknik Industri">Teknik Industri</option>
+            <option value="Teknik Mesin">Teknik Mesin</option>
+          </select>
+        </div>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Alamat:</label><br />
+          <textarea name="alamat" value={form.alamat} onChange={handleChange} rows="3" style={inputStyle} required></textarea>
+        </div>
+        <button type="submit" style={buttonStyle}>Daftar</button>
+      </form>
+    </div>
+  );
+}
+
+// Gaya input & button
+const inputStyle = {
+  width: '100%',
+  padding: '8px',
+  borderRadius: '4px',
+  border: '1px solid #ccc',
+  boxSizing: 'border-box'
+};
+
+const buttonStyle = {
+  backgroundColor: '#007bff',
+  color: 'white',
+  padding: '10px 16px',
+  border: 'none',
+  borderRadius: '4px',
+  cursor: 'pointer'
+};
+
+export default App;
