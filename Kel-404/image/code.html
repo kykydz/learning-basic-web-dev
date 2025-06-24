@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata Diri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+    class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center font-sans">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl bg-white shadow-2xl rounded-2xl overflow-hidden p-8">
+
+        <div class="flex justify-center items-center">
+            <img id="fotoDiri" src="zi.jpg" alt="Foto Diri"
+                class="rounded-xl shadow-lg w-64 h-auto object-cover border border-gray-300">
+        </div>
+
+        <div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">Biodata Diri</h1>
+            <table class="table-auto w-full text-left border border-gray-300 rounded-lg overflow-hidden mb-4">
+                <tbody>
+                    <tr class="hover:bg-gray-100 transition">
+                        <th class="p-3 bg-gray-200 w-1/3">Nama</th>
+                        <td class="p-3 text-font-color">Fauzi Saputra</td>
+                    </tr>
+                    <tr class="hover:bg-gray-100 transition">
+                        <th class="p-3 bg-gray-200">Tempat, Tanggal Lahir</th>
+                        <td class="p-3 text-font-color">Bandung, 09 Oktober 2004</td>
+                    </tr>
+                    <tr class="hover:bg-gray-100 transition">
+                        <th class="p-3 bg-gray-200">Jenis Kelamin</th>
+                        <td class="p-3 text-font-color">Laki-laki</td>
+                    </tr>
+                    <tr class="hover:bg-gray-100 transition">
+                        <th class="p-3 bg-gray-200">Alamat</th>
+                        <td class="p-3 text-font-color">Yogyakarta</td>
+                    </tr>
+                    <tr class="hover:bg-gray-100 transition">
+                        <th class="p-3 bg-gray-200">Email</th>
+                        <td class="p-3 text-font-color">fauzii.sptra@email.com</td>
+                    </tr>
+                    <tr class="hover:bg-gray-100 transition">
+                        <th class="p-3 bg-gray-200">Telepon</th>
+                        <td class="p-3 text-font-color">0894353000863</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center md:text-left space-y-2">
+                <button id="changeColorBtn"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Ganti Warna Font
+                </button>
+                <button id="changeImageBtn"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Ganti Foto
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script untuk mengganti warna font
+        const changeColorBtn = document.getElementById('changeColorBtn');
+        const textElements = document.querySelectorAll('.text-font-color');
+        const colors = ['red', 'green', 'blue', 'purple', 'indigo'];
+        let colorIndex = 0;
+
+        changeColorBtn.addEventListener('click', () => {
+            textElements.forEach(element => {
+                element.style.color = colors[colorIndex];
+            });
+            colorIndex = (colorIndex + 1) % colors.length;
+        });
+
+        // Script untuk mengganti gambar
+        const changeImageBtn = document.getElementById('changeImageBtn');
+        const fotoDiri = document.getElementById('fotoDiri');
+        const imageSources = ['zi.jpg', 'harimau.jpg', 'kereta.jpg']; // Ganti dengan path foto Anda
+        let imageIndex = 0;
+
+        changeImageBtn.addEventListener('click', () => {
+            imageIndex = (imageIndex + 1) % imageSources.length;
+            fotoDiri.src = imageSources[imageIndex];
+        });
+    </script>
+
+</body>
+
+</html>
