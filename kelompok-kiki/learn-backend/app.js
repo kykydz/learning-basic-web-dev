@@ -24,7 +24,7 @@ app.post('/users', (req, res) => {
   res.status(201).send({ message: 'User created' });
 });
 
-app.put('/users/:id', (req, res) => {
+app.patch('/users/:id', (req, res) => {
   const id = req.params.id;
   const user = data.find((u) => u.id == id);
   if (user) {
