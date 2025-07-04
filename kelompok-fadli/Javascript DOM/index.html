@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Halaman Sapaan Otomatis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1 class="title">Selamat Datang!</h1>
+      <p class="subtitle">Masukkan nama Anda untuk disapa sesuai waktu 🕒</p>
+
+      <form id="greetForm">
+        <input type="text" id="nameInput" placeholder="Masukkan nama Anda..." required />
+        <button type="submit">Sapa Saya</button>
+      </form>
+
+      <div id="greetingMessage" class="greeting"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
