@@ -1,9 +1,12 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
+const cors = require('cors');
 const data = require('./example-data.json');
 
 (async () => {
   const app = express();
+
+  app.use(cors());
 
   const connection = await mysql.createConnection({
     host: 'localhost',
@@ -47,10 +50,14 @@ const data = require('./example-data.json');
     }
   });
 
-  app.post('/users', (req, res) => {
-    const user = req.body;
-    data.push(user);
-    res.status(201).send({ message: 'User created' });
+  app.post('/users', async (req, res) => {
+    try {
+      const user = req.body;
+      await connection.query('INSERT INTO `users` SET ?', user);
+      res.status(201).send({ message: 'User created', data: user });
+    } catch (error) {
+      res.status(500).send({ message: 'Server error' });
+    }
   });
 
   app.patch('/users/:id', (req, res) => {
@@ -64,16 +71,17 @@ const data = require('./example-data.json');
     }
   });
 
-  app.delete('/users/:id', (req, res) => {
+  app.delete('/users/:id', async (req, res) => {
     const id = req.params.id;
-    const index = data.findIndex((u) => u.id == id);
-    if (index !== -1) {
-      data.splice(index, 1);
+    try {
+      await connection.query('DELETE FROM `users` WHERE id = ?', [id]);
+
       res.send({ message: 'User deleted' });
-    } else {
-      res.status(404).send({ message: 'User not found' });
+    } catch (error) {
+      res.status(500).send({ message: 'Server error' });
     }
   });
 
-  app.listen(3000, () => console.log('Listening on port 3000'));
+  const port = 3001;
+  app.listen(port, () => console.log(`Listening on port ${port}`));
 })();
