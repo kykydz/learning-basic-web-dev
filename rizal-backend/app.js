@@ -1,9 +1,14 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
 const data = require('./example-data.json');
+const cors = require('cors');
+
+const port = 3001;
 
 (async () => {
   const app = express();
+
+  app.use(cors());
 
   const connection = await mysql.createConnection({
     host: 'localhost',
@@ -108,6 +113,6 @@ app.patch('/users/:id', async (req, res) => {
   }
 });
 
-  app.listen(3000, () => console.log('Listening on port 3000'));
+  app.listen(port, () => console.log('Listening on port 3003'));
 })();
 
