@@ -3,6 +3,8 @@
 - Nama: Ahmad Rizal
 - NIM: 231057014
 
+# A. PROJECT
+
 ## 1. Konfigurasi Database (rizal-backend/app.js)
 ```bash
 const express = require('express');
@@ -84,3 +86,7 @@ node app.js
 cd rizal-frontend
 npm start
 ```
+
+# B. BUGGY SERVER
+## 1. Bug yang Ditemukan
+kesalahan penamaan file yang sebelumnya menggunakan .js maka diubah menjadi .html
