@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 NIM: 231057020
 Nama: Friena Sellisya Saputri
+=======
+FRIENA SELLISYA SAPUTRI
+231057020
+>>>>>>> 11ec2744309f32df5b258973da511057d9373c7c
