@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "askjdahsdkj87364hhur2.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node buggy-server.js"
   },
   "keywords": [],
   "author": "",
