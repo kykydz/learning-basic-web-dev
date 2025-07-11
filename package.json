@@ -1,0 +1,15 @@
+{
+  "name": "learning-basic-web-dev",
+  "version": "1.0.0",
+  "description": "nama : Naufal Rifki Ramadhan\r NIM  : 231058011",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
