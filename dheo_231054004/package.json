@@ -1,0 +1,17 @@
+{
+  "name": "dheo_231054004",
+  "version": "1.0.0",
+  "main": "server_4004.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server_4004.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.2"
+  }
+}
