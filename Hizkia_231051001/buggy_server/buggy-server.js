@@ -7,6 +7,8 @@ app.use(express.json());
 
 const { dhi237yh72384y38iririri } = require("./uyeuwq6623838-8234rur");
 
+app.post("/hello", s1h21782hd12yxywiuq);
+
 app.post("/count", dhi237yh72384y38iririri);
 
 app.post("/async-error", async (req, res) => {
