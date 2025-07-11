@@ -1,0 +1,14 @@
+{
+  "name": "backend_231051001",
+  "version": "1.0.0",
+  "description": "Backend API Node.js dengan Express untuk tugas PWEB Hizkia",
+  "main": "server_231051001.js",
+  "scripts": {
+    "start": "node server_231051001.js"
+  },
+  "author": "Hizkia Imanuel Sugondo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
