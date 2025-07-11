@@ -1,0 +1,15 @@
+{
+  "name": "server-231051006",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server_231051006.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
