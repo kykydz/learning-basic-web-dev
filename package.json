@@ -1,0 +1,23 @@
+{
+  "name": "learning-basic-web-dev",
+  "version": "1.0.0",
+  "description": "Server responsi backend Reinaldo Tosae - 231054023",
+  "main": "server_231054023.js",
+  "scripts": {
+    "start": "node server_231054023.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kykydz/learning-basic-web-dev.git"
+  },
+  "keywords": [],
+  "author": "Reinaldo Tosae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kykydz/learning-basic-web-dev/issues"
+  },
+  "homepage": "https://github.com/kykydz/learning-basic-web-dev#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
