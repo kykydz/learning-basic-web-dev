@@ -1,0 +1,14 @@
+{
+  "name": "buggyserver",
+  "version": "1.0.0",
+  "main": "askjdahsdkj87364hhur2.js",
+  "scripts": {
+    "start": "node buggy-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
