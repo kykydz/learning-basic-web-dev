@@ -20,3 +20,4 @@ Cara Mengupload code ke github :
      Isi nama repositori, atur visibilitas (Public atau Private), dan klik Create repository.
      Catatan: Jangan centang "Initialize this repository with a README" jika kamu sudah punya commit lokal, agar tidak terjadi konflik.
 >>>>>>> bb9b1b791fb7a80b76c376a5f2809de0f9881a0d
+ cbd
