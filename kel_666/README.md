@@ -1,4 +1,5 @@
 Cara Mengupload code ke github :
+naldo
  
  1.  Inisialisasi Repositori Git Lokal:
      Jika belum memiliki repositori Git, buka folder proyek di terminal dan jalankan git init untuk membuat repositori Git.
