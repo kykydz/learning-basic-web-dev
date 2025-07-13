@@ -8,6 +8,8 @@ const data = require("./example-data.json");
 
   app.use(cors());
 
+  // koneksi
+
   const connection = await mysql.createConnection({
     host: "localhost",
     user: "root",
