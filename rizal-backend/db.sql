@@ -1,23 +1,18 @@
--- 1. Membuat database library_db
-CREATE DATABASE library_db;
+CREATE DATABASE IF NOT EXISTS library_db;
 
--- 2. Menggunakan database yang baru dibuat
 USE library_db;
 
--- 3. Membuat tabel visitors untuk menyimpan data pengunjung
-CREATE TABLE visitors (
-  id INT AUTO_INCREMENT PRIMARY KEY,  -- ID pengunjung, auto increment
-  name VARCHAR(100) NOT NULL,         -- Nama pengunjung
-  address TEXT NOT NULL,              -- Alamat pengunjung
-  phone_number VARCHAR(20) NOT NULL,  -- Nomor telepon pengunjung
-  visit_date DATE NOT NULL            -- Tanggal kunjungan pengunjung
+-- Create the visitors table
+CREATE TABLE IF NOT EXISTS `visitors` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `address` TEXT NOT NULL,
+  `phone_number` VARCHAR(20) NOT NULL,
+  `visit_date` DATE NOT NULL
 );
 
--- 4. Menambahkan contoh data pengunjung
-INSERT INTO visitors (name, address, phone_number, visit_date) VALUES
-('John Doe', 'Jl. Merdeka No.1', '08123456789', '2025-07-17'),
-('Jane Smith', 'Jl. Raya No.2', '08234567890', '2025-07-16'),
-('Alice Johnson', 'Jl. Kebon Jeruk No.3', '08345678901', '2025-07-15');
-
--- 5. Menampilkan semua data pengunjung yang ada di tabel visitors
-SELECT * FROM visitors;
+-- Sample data insertion (optional)
+INSERT INTO `visitors` (name, address, phone_number, visit_date) 
+VALUES 
+  ('John Doe', '123 Main St, Springfield', '555-1234', '2025-07-15'),
+  ('Jane Smith', '456 Elm St, Springfield', '555-5678', '2025-07-16');
