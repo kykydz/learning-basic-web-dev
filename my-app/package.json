@@ -10,6 +10,10 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
+=======
+    "tailwindcss": "^3.4.17",
+>>>>>>> 63f649b2fcb99a615fd1149216d66748e1da88d1
     "web-vitals": "^2.1.4"
   },
   "scripts": {
